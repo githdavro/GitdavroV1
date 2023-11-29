@@ -7,6 +7,9 @@
 </head>
 <body>
 
+<!-- Tombol untuk kembali ke halaman home.php -->
+<a href="projects.php">Back to projects</a>
+
 <?php
 // Include file koneksi
 include 'koneksi.php';
