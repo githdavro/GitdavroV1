@@ -67,10 +67,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Eksekusi query
         if ($conn->query($sql) === TRUE) {
             echo "Data berhasil disimpan ke database.";
+    
+            // Redirect to data_view.php
+            header("Location: data_view.php");
+            exit(); // Ensure that the script stops execution after redirection
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-
+    
         // Tutup koneksi
         $conn->close();
     }
