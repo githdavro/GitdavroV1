@@ -140,7 +140,7 @@ body {
     left: 0;
     width: 0;
     height: 100%;
-    background: #020215;
+    background: #060643;
     z-index: -1;
     transition: .3s;
 }
@@ -295,3 +295,145 @@ body {
     text-justify: inter-word;
 }
 
+
+
+
+
+
+.project{
+    height: 100vh;
+    background: url('HomeBG2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.project-content {
+    background: transparent;
+    max-width: 510px;
+    margin-bottom: 50px;
+}
+
+.project-content h1 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.2S;
+}
+
+.project-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    width: 500px;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.208);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.35);
+    color: aqua;
+}
+
+
+
+
+.contact {
+    height: 100vh;
+    background: url('HomeBG2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.contact-content {
+    background: transparent;
+    max-width: 510px;
+    margin-bottom: 50px;
+}
+
+.contact-content h1 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.2S;
+    margin-bottom: 25px
+}
+
+.contact-content p {
+    color: greenyellow;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: aqua;
+}
+
+input, textarea {
+    width: 500px;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.208);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    resize: none;
+    color: white;
+}
+
+input[type="submit"] {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: aqua;
+    border: 2px solid aqua;
+    border-radius: 10px;
+    font-size: 19px;
+    color: #020215;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.input[type="submit"]:hover {
+    color: aqua;
+    text-shadow: 0 0 10px aqua;
+}
+
+.input[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #060643;
+    z-index: -1;
+    transition: .3s;
+}
+
+.input[type="submit"]:hover::before {
+    width: 100%;
+}
