@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Data</title>
+    <title>GitDaVro | Form Data</title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
-<!-- Tombol untuk kembali ke halaman home.php -->
-<a href="projects.php">Back to projects</a>
+<header class="header">
+        <a href="#" class="logosini">GitDaVro.</a>
+
+        <nav class="navbar">
+            
+            <a href="projects.php">Back</a>
+            <a href="https://github.com/githdavro/"><i class='bx bxl-github'></i></a>
+        </nav>
+    </header>
+
 
 <?php
 // Include file koneksi
@@ -24,7 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = test_input($_POST["nama"]);
     $email = test_input($_POST["email"]);
     $tanggal_lahir = test_input($_POST["tanggal_lahir"]);
-    $jenis_kelamin = test_input($_POST["jenis_kelamin"]);
+    
+    // Check if 'jenis_kelamin' index is set before accessing its value
+    $jenis_kelamin = isset($_POST["jenis_kelamin"]) ? test_input($_POST["jenis_kelamin"]) : "";
 
     // Validasi form
     if (empty($nama)) {
@@ -89,8 +101,13 @@ function test_input($data) {
 }
 ?>
 
+
+<section class="contact">
+    <h1>Isi Form data</h1>
+    <br><br>
+
 <!-- Form Data -->
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+<form class="contact-content" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     Nama: <input type="text" name="nama" value="<?php echo $nama; ?>">
     <span class="error">* <?php echo $error_nama; ?></span>
     <br><br>
@@ -112,5 +129,28 @@ function test_input($data) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
+<div class="home-inf"><p>Any suggestion would be appreciated. You can mail me at: <br>
+            <a href="mailto:githriffgresik@gmail.com" class="active">githriffgresik@gmail.com</a>
+        </div>
+
+            <div class="home-sci">
+                <h3>Follow me:</h3><br>
+                <a href="https://github.com/githdavro/"><i class='bx bxl-github'></i></a>
+                <a href="https://www.facebook.com/githriff.nibross/"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/gith.amd_"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://t.me/s/Fre1z4"><i class='bx bxl-telegram'></i></a>
+            </div>
+            <div class="clock">
+                <h1 id="current-time"9></h1>
+            </div>
+
+            <span class="home-imgHover"></span>
+
+            <div class="home-bott">
+        <p>©2023 GitDaVro All Rights reserved. This site is made with kang love by <a href="https://instagram.com/gith.amd_" target="_blank" class="active">@gith.amd_</a></p>
+        </div>
+
+</section>
 </body>
 </html>
