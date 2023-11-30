@@ -17,8 +17,8 @@
 
 <?php
 // Set username dan password yang benar
-$correct_username = "gitdavro";
-$correct_password = "123";
+$correct_username = "admin";
+$correct_password = "admin";
 
 // Inisialisasi variabel
 $username = "";
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<script>alert("Login berhasil");</script>';
         
         // Redirect ke halaman home.php jika login berhasil
-        header("Location: home.php");
+        echo '<script>window.location.href = "home.php";</script>';
         exit();
     } else {
         // Tampilkan pesan error jika login gagal
@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
 <!-- Form Login -->
 
@@ -59,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Login">
 </form>
 
-<div class="home-bott animate__animated animate__fadeInUp">
+        <div class="home-bott animate__animated animate__fadeInUp">
         <p>©2023 GitDaVro All Rights reserved. This site is made with kang love by <a href="https://instagram.com/gith.amd_" target="_blank" class="active">@gith.amd_</a></p>
         </div>
 
