@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitDaVro | Form Data</title>
-    
+    <title>Projects | Form data</title>
+    <link rel="stylesheet" href="form.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body>
 
-<header class="header">
-        <a href="#" class="logosini">GitDaVro.</a>
+<body>
+    <header class="header animate__animated animate__fadeInDown">
+        <a href="#" class="logosini">GitDaVro.| Projectk</a>
 
         <nav class="navbar">
-            
-            <a href="projects.php">Back</a>
-            <a href="https://github.com/githdavro/"><i class='bx bxl-github'></i></a>
+            <a href="projects.php">Return to Projects</a>
         </nav>
     </header>
 
+    <section class="dataform">
+    <div class="dataform-content animate__animated animate__bounceIn animate__delay-1s">
+
+    <h1>Isi Form data</h1>
+
+    
+    <br><br>
 
 <?php
 // Include file koneksi
@@ -44,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($email)) {
-        $error_email = "Email harus diisi";
+        $error_email = "<span style='color: red;'>Email harus diisi</span>";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error_email = "Format email tidak valid";
     }
@@ -78,10 +86,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Eksekusi query
         if ($conn->query($sql) === TRUE) {
-            echo "Data berhasil disimpan ke database.";
+            // Display the success alert
+            echo '<script>alert("Alhamdulillah Data berhasil diisi");</script>';
     
             // Redirect to data_view.php
-            header("Location: data_view.php");
+            echo '<script>window.location.href = "data_view.php";</script>';
             exit(); // Ensure that the script stops execution after redirection
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
@@ -91,6 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->close();
     }
 }
+    
+
 
 // Fungsi untuk membersihkan dan memvalidasi data input
 function test_input($data) {
@@ -102,52 +113,34 @@ function test_input($data) {
 ?>
 
 
-<section class="contact">
-    <h1>Isi Form data</h1>
-    <br><br>
+
 
 <!-- Form Data -->
-<form class="contact-content" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    Nama: <input type="text" name="nama" value="<?php echo $nama; ?>">
+<form class="dataform-content" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <label class="label" for="name">Name:</label><br> 
+    <input type="text" name="nama" value="<?php echo $nama; ?>"><br>
     <span class="error">* <?php echo $error_nama; ?></span>
     <br><br>
 
-    Email: <input type="text" name="email" value="<?php echo $email; ?>">
+    <label class="label" for="name">Email:</label><br>  <input type="text" name="email" value="<?php echo $email; ?>"><br>
     <span class="error">* <?php echo $error_email; ?></span>
     <br><br>
 
-    Tanggal Lahir: <input type="date" name="tanggal_lahir" value="<?php echo $tanggal_lahir; ?>">
+    <label class="label" for="name">Tanggal lahir:</label><br>  <input type="date" name="tanggal_lahir" value="<?php echo $tanggal_lahir; ?>"><br>
     <span class="error">* <?php echo $error_tanggal_lahir; ?></span>
     <br><br>
 
-    Jenis Kelamin:
-    <input type="radio" name="jenis_kelamin" value="Laki-laki" <?php if ($jenis_kelamin == "Laki-laki") echo "checked"; ?>> Laki-laki
-    <input type="radio" name="jenis_kelamin" value="Perempuan" <?php if ($jenis_kelamin == "Perempuan") echo "checked"; ?>> Perempuan
+    <label class="label" for="name">Gender:</label><br>
+    <label><input type="radio" name="jenis_kelamin" value="Laki-laki" <?php if ($jenis_kelamin == "Laki-laki") echo "checked"; ?>>Laki-laki</label>
+    <input type="radio" name="jenis_kelamin" value="Perempuan" <?php if ($jenis_kelamin == "Perempuan") echo "checked"; ?>>Perempuan</label> <br>
     <span class="error">* <?php echo $error_jenis_kelamin; ?></span>
     <br><br>
 
     <input type="submit" name="submit" value="Submit">
 </form>
+</div>
 
-<div class="home-inf"><p>Any suggestion would be appreciated. You can mail me at: <br>
-            <a href="mailto:githriffgresik@gmail.com" class="active">githriffgresik@gmail.com</a>
-        </div>
-
-            <div class="home-sci">
-                <h3>Follow me:</h3><br>
-                <a href="https://github.com/githdavro/"><i class='bx bxl-github'></i></a>
-                <a href="https://www.facebook.com/githriff.nibross/"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.instagram.com/gith.amd_"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                <a href="https://t.me/s/Fre1z4"><i class='bx bxl-telegram'></i></a>
-            </div>
-            <div class="clock">
-                <h1 id="current-time"9></h1>
-            </div>
-
-            <span class="home-imgHover"></span>
-
-            <div class="home-bott">
+            <div class="home-bott animate__animated animate__fadeInUp">
         <p>©2023 GitDaVro All Rights reserved. This site is made with kang love by <a href="https://instagram.com/gith.amd_" target="_blank" class="active">@gith.amd_</a></p>
         </div>
 
