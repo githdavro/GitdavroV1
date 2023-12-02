@@ -1,0 +1,154 @@
+/* dataview.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.home-inf {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    bottom: 145px;
+    width: 400px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-inf a {
+    text-decoration: none;
+    color: aqua;
+
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 85px;
+    width: 350px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height:  40px;
+    background: transparent;
+    border: 2px solid aqua;
+    border-radius: 50%;
+    font-size: 20px;
+    color: aqua;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.home-sci a:hover{
+    color: #020215;
+    box-shadow: 0 0 50px #0ff, 0 0 21px #0ff;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: aqua;
+    z-index: -1;
+    transition: .3s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 800px;
+    height: 100%;
+    transition: .4s;
+}
+
+.home-imgHover:hover {
+    background: #020215bf;
+}
+
+.home-bott {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 800;
+    bottom: 50px;
+    width: 550px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-bott a {
+    text-decoration: none;
+    color: aqua;
+}
+
+.clock {
+    background: transparent;
+    position: absolute;
+    color: aqua;
+    right: 50px;
+    bottom: 40px;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+
+
+
